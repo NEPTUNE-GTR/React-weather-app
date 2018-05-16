@@ -33,17 +33,33 @@ class App extends React.Component
         const api_call = await fetch('http://api.openweathermap.org/data/2.5/weather?q=' + city + ',' + country + '&units=' + units + '&appid=' + API_WEATHER_KEY);
         const data     = await api_call.json();
         
-        console.log(data); 
+        //check to see if city and county 
+        if(city && country)
+        {
+            console.log(data); 
 
-        //should never directly manipulate the state, instead use setState
-        this.setState({
-            temp:        data.main.temp,
-            city:        data.name,
-            country:     data.sys.country,
-            humidity:    data.main.humidity,
-            description: data.weather[0].description,
-            error: ''
-        })
+            //should never directly manipulate the state, instead use setState
+            this.setState({
+                temp:        data.main.temp,
+                city:        data.name,
+                country:     data.sys.country,
+                humidity:    data.main.humidity,
+                description: data.weather[0].description,
+                error: ''
+            })
+        }
+        else
+        {
+            this.setState({
+                temp:        undefined,
+                city:        undefined,
+                country:     undefined,
+                humidity:    undefined,
+                description: undefined,
+                error: 'Please enter a city and country'
+            })
+
+        }
     }
     render()
     {
@@ -53,12 +69,12 @@ class App extends React.Component
                 <Form getWeather = {this.getWeather }/>
 
                 <Weather 
-                temp = {this.state.temp}
-                city = {this.state.city}
-                country = {this.state.country}
-                humidity = {this.state.humidity}
-                description = {this.state.description}
-                error = {this.state.error}
+                    temp        = {this.state.temp}
+                    city        = {this.state.city}
+                    country     = {this.state.country}
+                    humidity    = {this.state.humidity}
+                    description = {this.state.description}
+                    error       = {this.state.error}
                 />
             </div>
         );
