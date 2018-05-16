@@ -1,23 +1,20 @@
 import React from "react";
 
 
-class Weather extends React.Component
+
+const Weather = (props) => 
 {
-    render()
-    {
-        // only display 'Location' string if props.city and props.country are true, and same for 'temperature', 'humidity', and 'conditions'
-        return(
-            <div>
-                {this.props.city && this.props.country && <p>Location:    {this.props.city}, {this.props.country}</p>}
-                {this.props.temp                       && <p>Temperature: {this.props.temp}</p>}
-                {this.props.humidity                   && <p>Humidity:    {this.props.humidity}</p>}
-                {this.props.description                && <p>Conditions:  {this.props.description}</p>}
+    return (
+        <div>
+            {props.city && props.country && <p>Location:    {props.city}, {props.country}</p>}
+            {props.temp                       && <p>Temperature: {props.temp}</p>}
+            {props.humidity                   && <p>Humidity:    {props.humidity}</p>}
+            {props.description                && <p>Conditions:  {props.description}</p>}
 
-                {this.props.error                      && <p>Error:       {this.props.error}</p>}
-            </div>
-        );
-    }
+            {props.error                      && <p>Error:       {props.error}</p>}
+        </div>
+
+    );
 }
-
 
 export default Weather;
