@@ -1,8 +1,9 @@
 import React from "react";
 
-import Titles from "./components/Titles.js";
-import Form from   "./components/Form.js";
-import Weather from "./components/Weather.js"; 
+import Titles  from "./components/Titles.js";
+import Form    from "./components/Form.js";
+import Weather from "./components/Weather.js";
+import Clock   from "./components/Clock.js"; 
 
 const API_WEATHER_KEY = "28f70ee442096f6acf78f287d31b4854";
 
@@ -66,6 +67,7 @@ class App extends React.Component
         return (
             <div>
                 <Titles/>
+                <Clock/>
                 <Form getWeather = {this.getWeather }/>
 
                 <Weather 
