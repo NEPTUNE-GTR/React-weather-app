@@ -1,7 +1,5 @@
 import React from "react";
 
-
-
 //a stateless functional component
 const Weather = (props) => 
 {

@@ -1,16 +1,19 @@
 import React from "react";
 
-class Titles extends React.Component
+
+//a stateless functional component
+const Titles = (props) =>
 {
-    render()
-    {
-        return(
-            <div>
-                <h1>React weather app</h1>
-                <p>Find out temperature and conditions</p>
-            </div>
-        );
-    }
+    return(
+        <div>
+            <h1>React weather app</h1>
+            <p>Find out temperature and conditions</p>
+        </div>
+    );
 }
 
 export default Titles;
+
+
+
+
