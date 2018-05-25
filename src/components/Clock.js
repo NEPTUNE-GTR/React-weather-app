@@ -9,27 +9,22 @@ class Clock extends React.Component
     }
 
     /////////////////life cycle hooks\\\\\\\\\\\\\\\\\\\
-
     //componentDidMount hook runs after the component has need rendered to the DOM
     componentDidMount()
     {
         this.timerID = setInterval( () => this.tick(), 1000 )
-
     }
-
     //clear the timer in the componentWillUnmount lifecycle hook
     componentWillUnmount()
     {
         clearInterval(this.timerID)
     }
-
     tick()
     {
         this.setState({
             date: new Date()
         });
     }
-
     render() 
     {
         return (
@@ -39,5 +34,4 @@ class Clock extends React.Component
         );
     }
 }
-
 export default Clock;

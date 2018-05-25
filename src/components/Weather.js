@@ -7,19 +7,31 @@ const Weather = (props) =>
     return (
         <div className = "weather__info">
             {
-                props.city && props.country && <p>Location: {props.city}, {props.country}</p>
+                props.city && props.country && 
+                <p className = "weather__key">Location: 
+                    <span className = "weather__value">{props.city}, {props.country}</span>
+                </p>
             }
 
             {
-                props.temp && <p>Temperature(C°): {props.temp}</p>
+                props.temp && 
+                <p className = "weather__key">Temperature(C°):
+                    <span className = "weather__value">{props.temp}</span>
+                </p>
             }
 
             {
-                props.humidity && <p>Humidity(%):    {props.humidity}</p>
+                props.humidity && 
+                <p className = "weather__key">Humidity(%):    
+                    <span className = "weather__value">{props.humidity}</span>
+                </p>
             }
 
             {
-                props.description && <p>Current conditions:  {props.description}</p>
+                props.description && 
+                <p className = "weather__key">Current conditions:
+                    <span className = "weather__value">{props.description}</span>
+                </p>
             }
 
             {
