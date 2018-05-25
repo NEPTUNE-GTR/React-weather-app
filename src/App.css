@@ -122,14 +122,14 @@ button
     width: 60%;
     font-size: 20px;
     font-weight: 200;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
 }
 
 .weather__key 
 {
     color: #000000;
     border-bottom: solid 2px rgba(255,255,255,0.06);
-    padding: 20px 0 20px 0;
+    padding: 20px 0 2px 0;
     font-weight: 400;
 }
 
